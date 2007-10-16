@@ -17,7 +17,7 @@ Templates for imake
 %patch0 -p1 -b .mdvconfig
 
 %build
-%configure	--with-config-dir=%{_datadir}/X11/config \
+%configure --with-config-dir=%{_datadir}/X11/config
 %make
 
 %install
