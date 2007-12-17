@@ -6,7 +6,6 @@ Group: Development/X11
 Source: http://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-%{version}.tar.bz2
 Patch0: xorg-cf-files-1.0.2-mdvconfig.patch
 License: MIT
-BuildRoot: %{_tmppath}/%{name}-root
 Obsoletes: xorg-cf-files < 1.0.2
 
 %description
