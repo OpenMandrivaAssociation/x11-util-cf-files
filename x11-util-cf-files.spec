@@ -3,6 +3,7 @@ Version: 1.0.2
 Release: %mkrel 4
 Summary: Templates for imake 
 Group: Development/X11
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source: http://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-%{version}.tar.bz2
 Patch0: xorg-cf-files-1.0.2-mdvconfig.patch
 License: MIT
