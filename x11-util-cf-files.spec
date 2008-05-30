@@ -1,6 +1,6 @@
 Name: x11-util-cf-files
 Version: 1.0.2
-Release: %mkrel 4
+Release: %mkrel 5
 Summary: Templates for imake 
 Group: Development/X11
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
