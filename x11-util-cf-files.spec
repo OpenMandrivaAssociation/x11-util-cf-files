@@ -1,7 +1,7 @@
 Name: x11-util-cf-files
 Version: 1.0.3
-Release: %mkrel 1
-Summary: Templates for imake 
+Release: %mkrel 2
+Summary: Templates for imake
 Group: Development/X11
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source: http://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-%{version}.tar.bz2
@@ -17,7 +17,7 @@ Templates for imake
 %patch0 -p1 -b .mdvconfig
 
 %build
-%configure --with-config-dir=%{_datadir}/X11/config
+%configure2_5x --with-config-dir=%{_datadir}/X11/config
 %make
 
 %install
