@@ -1,11 +1,11 @@
 Name: x11-util-cf-files
-Version: 1.0.3
-Release: %mkrel 2
+Version: 1.0.4
+Release: %mkrel 1
 Summary: Templates for imake
 Group: Development/X11
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source: http://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-%{version}.tar.bz2
-Patch0: xorg-cf-files-1.0.2-mdvconfig.patch
+Patch0: 0001-Add-mdvconfig.patch
 License: MIT
 Obsoletes: xorg-cf-files < 1.0.2
 
