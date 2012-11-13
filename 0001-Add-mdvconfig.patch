@@ -1,0 +1,129 @@
+From 3ea25754a4034c2795f40283fe087aa70e844209 Mon Sep 17 00:00:00 2001
+From: Paulo Zanoni <pzanoni@mandriva.com>
+Date: Thu, 6 Jan 2011 08:35:56 -0200
+Subject: [PATCH] Add mdvconfig
+
+---
+ Makefile.am     |    7 +++----
+ Makefile.in     |    7 +++----
+ configure       |    3 ++-
+ configure.ac    |    1 +
+ host.def        |    1 +
+ mandriva.def.in |    4 ++++
+ 6 files changed, 14 insertions(+), 9 deletions(-)
+ create mode 100644 host.def
+ create mode 100644 mandriva.def.in
+
+diff --git a/Makefile.am b/Makefile.am
+index e984ca8..28a2f34 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -1,5 +1,4 @@
+ BUILT_DEFFILES = \
+-	host.def \
+ 	date.def \
+ 	version.def
+ 
+@@ -8,7 +7,9 @@ DEFFILES = \
+ 	site.def \
+ 	xf86site.def \
+ 	xorgsite.def \
+-	xorgversion.def
++	xorgversion.def \
++	host.def \
++	mandriva.def
+ 
+ RULEFILES = \
+ 	Imake.rules \
+@@ -140,8 +141,6 @@ EXTRA_DIST = \
+ 
+ all-local: $(BUILT_DEFFILES)
+ 
+-host.def:
+-	@touch host.def
+ date.def:
+ 	@touch date.def
+ version.def:
+diff --git a/Makefile.in b/Makefile.in
+index 2368061..566598e 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -209,7 +209,6 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ BUILT_DEFFILES = \
+-	host.def \
+ 	date.def \
+ 	version.def
+ 
+@@ -218,7 +217,9 @@ DEFFILES = \
+ 	site.def \
+ 	xf86site.def \
+ 	xorgsite.def \
+-	xorgversion.def
++	xorgversion.def \
++	host.def \
++	mandriva.def
+ 
+ RULEFILES = \
+ 	Imake.rules \
+@@ -704,8 +705,6 @@ uninstall-am: uninstall-configDATA uninstall-dist_configDATA
+ 
+ all-local: $(BUILT_DEFFILES)
+ 
+-host.def:
+-	@touch host.def
+ date.def:
+ 	@touch date.def
+ version.def:
+diff --git a/configure b/configure
+index 334896d..8ff77c9 100755
+--- a/configure
++++ b/configure
+@@ -4649,7 +4649,7 @@ fi
+ 
+ 
+ 
+-ac_config_files="$ac_config_files Makefile site.def"
++ac_config_files="$ac_config_files Makefile site.def mandriva.def"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -5403,6 +5403,7 @@ do
+     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
+     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+     "site.def") CONFIG_FILES="$CONFIG_FILES site.def" ;;
++    "mandriva.def" ) CONFIG_FILES="$CONFIG_FILES mandriva.def" ;;
+ 
+   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
+   esac
+diff --git a/configure.ac b/configure.ac
+index ab2c5ac..11b5a9d 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -37,4 +37,5 @@ AC_SUBST(XCONFDIR)
+ AC_OUTPUT([
+ 	Makefile
+ 	site.def
++	mandriva.def
+ ])
+diff --git a/host.def b/host.def
+new file mode 100644
+index 0000000..63dfb9b
+--- /dev/null
++++ b/host.def
+@@ -0,0 +1 @@
++#include <mandriva.def>
+diff --git a/mandriva.def.in b/mandriva.def.in
+new file mode 100644
+index 0000000..2ab2b68
+--- /dev/null
++++ b/mandriva.def.in
+@@ -0,0 +1,4 @@
++#define ManPath        @mandir@
++#define ConfigDir      @XCONFDIR@
++#define ProjectRoot    @prefix@
++#define MotifDir       @prefix@
+-- 
+1.7.1
+
