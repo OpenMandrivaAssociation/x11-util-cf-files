@@ -1,6 +1,6 @@
 Name:		x11-util-cf-files
 Version:	1.0.5
-Release:	9
+Release:	10
 Summary:	Templates for imake
 Group:		Development/X11
 
