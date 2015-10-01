@@ -7,6 +7,8 @@ Group:		Development/X11
 Source0:	http://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-%{version}.tar.bz2
 Patch0:		0001-Add-mdvconfig.patch
 License:	MIT
+BuildRequires:	x11-util-macros
+BuildRequires:	x11-font-util
 Obsoletes:	xorg-cf-files < 1.0.2
 BuildArch:	noarch
 
@@ -15,10 +17,10 @@ Templates for imake.
 
 %prep
 %setup -q -n xorg-cf-files-%{version}
-%patch0 -p1 -b .mdvconfig
+%apply_patches
 
 %build
-%configure2_5x \
+%configure \
 		--with-config-dir=%{_datadir}/X11/config
 
 %make
