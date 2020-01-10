@@ -17,7 +17,7 @@ Templates for imake.
 
 %prep
 %setup -q -n xorg-cf-files-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 %configure \
