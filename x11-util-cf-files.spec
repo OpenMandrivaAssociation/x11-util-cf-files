@@ -1,6 +1,6 @@
 Name:		x11-util-cf-files
 Version:	1.0.8
-Release:	1
+Release:	2
 Summary:	Templates for imake
 Group:		Development/X11
 Source0:	http://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-%{version}.tar.xz
